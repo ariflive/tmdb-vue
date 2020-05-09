@@ -19,9 +19,9 @@
 					<a :href="'/movie/'+item.id">
 						<img :src="imageUrl + item.poster_path" />
 					</a>
-					<small>Released on: {{ item.release_date }}</small>
+					<small>Release Date: {{ item.release_date }}</small>
 					<h3>{{ item.original_title }}</h3>
-					<p>{{ item.overview }}</p>					
+					<p>{{ item.overview }}</p>
 				</article>
 			</li>
 		</ul>
