@@ -2,7 +2,7 @@
 	<div>
 		<Navigation />
     <Logo title="The Movie DB" />
-		Stats
+		<D3BarChart :config="chart_config" :datum="chart_data"></D3BarChart>
 		<hr/>
 	</div>
 </template>
@@ -14,12 +14,34 @@ var url = ''
 import axios from 'axios'
 import Navigation from './Navigation.vue'
 import Logo from './Logo.vue'
+import { D3BarChart } from 'vue-d3-charts';
 
 export default {
 	name: 'Stats',
 	components: {
     Navigation,
-    Logo
+		Logo,
+		D3BarChart
+	},
+	data() {
+		return {
+			chart_config: {
+        key: 'name',
+        color: {
+          scheme: 'schemeCategory10'
+        },
+        transition: {
+          ease: 'easeBounceOut',
+          duration: 1000
+        }
+      },
+      chart_data: [
+          { start: 2355, end: 5855, name: "Lorem" },
+          { start: 4260, end: 6510, name: "Ipsum" },
+          { start: 5029, end: 5138, name: "Dolor" }
+      ],
+      count: 0
+		}
 	},
 	mounted () {
 		url = singleURL
@@ -33,23 +55,4 @@ export default {
 
 
 <style scoped>
-ul.movies {
-	display: flex;
-	flex-wrap: wrap;
-	padding-left: 0;
-}
-ul.movies li {
-	list-style: none;
-	flex: 0 0 33.333333%;
-}
-ul.movies img {
-	width:100%;
-	height:auto;
-}
-article {
-	padding:9px;
-}
-@media screen and (max-width:600px) {
-  ul.movies li { flex: 0 0 50%; }
-}
 </style>
