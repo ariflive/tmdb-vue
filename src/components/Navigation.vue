@@ -1,30 +1,29 @@
 <template>
-  <header class="header">
+  <nav>
     <div id="nav">
-      <router-link :to="{name: 'home'}" exact>Home</router-link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <router-link :to="{name: 'stats'}" exact>Stats</router-link>
+      <router-link to="/">Home</router-link>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <router-link to="/stats">Stats</router-link>
     </div>
-  </header>
+  </nav>
 </template>
 
 
 <script>
 export default {
-  name: "Header"
+  name: "Navigation"
 }
 </script>
 
 
 <style scoped>
-  .header {
+  nav {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 10px;
   }
-
-  .header a {
+  nav a {
     color: #fff;
     padding-right: 5px;
     text-decoration: none;

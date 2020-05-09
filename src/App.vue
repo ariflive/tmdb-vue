@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    <Home />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from './components/Home.vue'
-
 export default {
 	name: 'App',
-	components: { Home }
+	components: {
+	}
 }
 </script>
 
@@ -21,7 +20,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
-	color: #2c3e50;
 }
 hr {
 	margin-top:20px;
