@@ -31,7 +31,7 @@
 			<li v-bind:key="item.id" v-for="item in items" >
 				<article :id="'movie-'+item.id">
 					<a :href="'/movie/'+item.id">
-						<img :src="imageUrl + item.poster_path" />
+						<b-img :src="imageUrl + item.poster_path" fluid rounded blank-color="#ccc" alt="Fluid image"></b-img>
 					</a>
 					<small>Release Date: {{ item.release_date }}</small>
 					<h3>{{ item.original_title }}</h3>
@@ -101,8 +101,8 @@ export default {
 		});
 	},
 	methods: {
-		sortMovies: function (event) {
-			url = baseURL + '&sort_by=' + event.target.value + '&page=1'
+		sortMovies: function (value) {
+			url = baseURL + '&sort_by=' + value + '&page=1'
 			console.log(url)
 			axios.get(url).then(response => {
 				this.totalPages = response.data.total_pages;
