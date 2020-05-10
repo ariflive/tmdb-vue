@@ -9,9 +9,6 @@
 
 
 <script>
-var singleURL = 'https://api.themoviedb.org/3/movie/157336?api_key=012294b008ce032976f517b73f297916&append_to_response=videos,images'
-var url = ''
-import axios from 'axios'
 import Navigation from './Navigation.vue'
 import Logo from './Logo.vue'
 import { D3BarChart } from 'vue-d3-charts';
@@ -42,13 +39,6 @@ export default {
       ],
       count: 0
 		}
-	},
-	mounted () {
-		url = singleURL
-		console.log(url)
-		axios.get(url).then(response => {
-			console.log(response);
-		});
 	}
 }
 </script>
