@@ -1,18 +1,32 @@
 <template>
 	<div>
-		<select v-model="selected" @change="sortMovies" class="form-control">
-			<option v-bind:key="option.value" v-for="option in options" v-bind:value="option.value">
-				{{ option.text }}
-			</option>
-		</select>
-		<input v-model="searchValue" type="text" placeholder="Movie name..." />
-		<button class="btn btn-primary" v-on:click="searchMovies">Search</button>
-		<button class="btn btn-secondary" v-on:click="clearMovies">Clear</button>
-		<hr/>
-		<button class="btn btn-primary" v-on:click="prevMovies">Previous</button>
-		<small>Showing Page: {{currentPage}} of {{totalPages}}</small>
-		<button class="btn btn-primary" v-on:click="nextMovies">Next</button>
-		<hr/>
+		<b-navbar type="light" variant="light">
+			<b-form inline>
+				<b-form-group>
+					<b-form-select v-model="selected" @change="sortMovies" class="mb-2 mr-sm-2 mb-sm-0">
+						<b-form-select-option v-bind:key="option.value" v-for="option in options" v-bind:value="option.value">
+							{{ option.text }}
+						</b-form-select-option>
+					</b-form-select>
+				</b-form-group>
+				<b-form-group>
+					<b-form-input v-model="searchValue" placeholder="Movie name..." class="mb-2 mr-sm-2 mb-sm-0"></b-form-input>
+					<b-button variant="primary" v-on:click="searchMovies" class="mb-2 mr-sm-2 mb-sm-0">Search</b-button>
+					<b-button variant="secondary" v-on:click="clearMovies" class="mb-2 mr-sm-2 mb-sm-0">Clear</b-button>
+				</b-form-group>
+			</b-form>
+		</b-navbar>
+
+		<b-navbar>
+			<b-form inline>
+				<b-form-group>
+					<b-button variant="outline-secondary" v-on:click="prevMovies" size="sm" class="mb-2 mr-sm-2 mb-sm-0">Previous</b-button>
+					<small class="mb-2 mr-sm-2 mb-sm-0">Showing Page: {{currentPage}} of {{totalPages}}</small>
+					<b-button variant="outline-secondary" v-on:click="nextMovies" size="sm" class="mb-2 mr-sm-2 mb-sm-0">Next</b-button>
+				</b-form-group>
+			</b-form>
+		</b-navbar>
+
 		<ul class="movies">
 			<li v-bind:key="item.id" v-for="item in items" >
 				<article :id="'movie-'+item.id">
@@ -25,11 +39,16 @@
 				</article>
 			</li>
 		</ul>
-		<hr/>
-		<button class="btn btn-primary" v-on:click="prevMovies">Previous</button>
-		<small>Showing Page: {{currentPage}} of {{totalPages}}</small>
-		<button class="btn btn-primary" v-on:click="nextMovies">Next</button>
-		<hr/>
+
+		<b-navbar>
+			<b-form inline>
+				<b-form-group>
+					<b-button variant="outline-secondary" v-on:click="prevMovies" size="sm" class="mb-2 mr-sm-2 mb-sm-0">Previous</b-button>
+					<small class="mb-2 mr-sm-2 mb-sm-0">Showing Page: {{currentPage}} of {{totalPages}}</small>
+					<b-button variant="outline-secondary" v-on:click="nextMovies" size="sm" class="mb-2 mr-sm-2 mb-sm-0">Next</b-button>
+				</b-form-group>
+			</b-form>
+		</b-navbar>
 	</div>
 </template>
 
@@ -160,7 +179,7 @@ ul.movies img {
 	height:auto;
 }
 article {
-	padding:9px;
+	padding:16px;
 }
 @media screen and (max-width:600px) {
   ul.movies li { flex: 0 0 50%; }

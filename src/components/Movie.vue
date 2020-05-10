@@ -12,7 +12,10 @@
 			<p>Release Date: {{ movie.release_date }}</p>
 			<img :src="imageUrl + movie.poster_path" />
 			<p>{{ movie.overview }}</p>
-			<router-link to="/">Go Back</router-link>
+
+			<b-button variant="link" size="lg" class="mb-2 mr-sm-2 mb-sm-0">
+				<router-link to="/">Go Back</router-link>
+			</b-button>
 		</article>
 		<hr/>
 	</div>
