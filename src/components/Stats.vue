@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<Navigation />
-    <Logo title="The Movie DB" />
 		<D3BarChart :config="chart_config" :datum="chart_data"></D3BarChart>
 		<hr/>
 	</div>
@@ -10,14 +9,12 @@
 
 <script>
 import Navigation from './Navigation.vue'
-import Logo from './Logo.vue'
 import { D3BarChart } from 'vue-d3-charts';
 
 export default {
 	name: 'Stats',
 	components: {
     Navigation,
-		Logo,
 		D3BarChart
 	},
 	data() {

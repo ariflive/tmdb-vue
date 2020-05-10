@@ -4,6 +4,8 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { BootstrapVue } from 'bootstrap-vue'
 import App from './App.vue'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
 
 import Home from './components/Home.vue';
 import Stats from './components/Stats.vue';

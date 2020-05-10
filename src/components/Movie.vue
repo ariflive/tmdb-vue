@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<Navigation />
-    <Logo title="The Movie DB" />
 		<article :id="'movie-'+movie.id">
 			<h1>{{ movie.original_title }}</h1>
 			<ul>
@@ -23,7 +22,6 @@
 <script>
 import axios from 'axios'
 import Navigation from './Navigation.vue'
-import Logo from './Logo.vue'
 
 export default {
 	name: 'Movie',
@@ -31,8 +29,7 @@ export default {
 		id: String
 	},
 	components: {
-    Navigation,
-    Logo
+    Navigation
 	},
 	data() {
 		return {

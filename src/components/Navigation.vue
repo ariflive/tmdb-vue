@@ -1,11 +1,19 @@
 <template>
-  <nav>
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <router-link to="/stats">Stats</router-link>
-    </div>
-  </nav>
+  <div>
+    <b-navbar type="dark" variant="dark">
+      <b-navbar-brand>
+        <router-link to="/"><img src="../assets/tmdb-logo.svg" /></router-link>
+      </b-navbar-brand>
+      <b-nav pills>
+        <b-nav-item>
+          <router-link to="/">Home</router-link>
+        </b-nav-item>
+        <b-nav-item>
+          <router-link to="/stats">Stats</router-link>
+        </b-nav-item>
+      </b-nav>
+    </b-navbar>
+  </div>
 </template>
 
 
@@ -17,15 +25,13 @@ export default {
 
 
 <style scoped>
-  nav {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-  nav a {
-    color: #fff;
-    padding-right: 5px;
-    text-decoration: none;
-  }
+img {
+  margin-top:9px;
+  margin-bottom:9px;
+  width:auto;
+  height:24px;
+}
+::v-deep .nav-link {
+   color: #fff !important;
+}
 </style>
